@@ -4,7 +4,7 @@ title: '#4471 · one ticket, two causes'
 owner: kamil-zbroniec
 status: review
 reviewed: 2026-11-20
-signature: kamil-zbroniec
+signature: v1.eyJzdWIiOiI4MDgwIiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTUxODQ4NDksImV4cCI6MTc5NTI3MTI0OX0.Z4N5-tgwzgHXWk0Y1yZuJRKEvc2bbAjNaDK7OZ04tvc
 ---
 
 <script>
