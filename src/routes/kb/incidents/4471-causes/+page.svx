@@ -1,0 +1,46 @@
+---
+layout: runbook
+title: '#4471 · one ticket, two causes'
+owner: kamil-zbroniec
+status: review
+reviewed: 2026-11-20
+signature: kamil-zbroniec
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+</script>
+
+Ticket #4471 is marked **known** as one bug: the shared parser reads dates month first and
+our tenants write the day first. Reading the merged reports by tenant — not by the intake
+tag, which is only a guess from the reporter's browser — the ticket holds **two causes**.
+
+## What is in #4471
+
+<CauseTable ticket={4471} />
+
+The ticket's own cause is `parser`: the shared parser reads a date month first, a day-first
+tenant's people write the day first, and every date lands flipped. That is most of the
+ticket, from every tenant we have on file.
+
+The rest is `hint` and does not belong to this ticket: three day-first tenants run
+`booking-v3`, whose date field prints `MM/DD/YYYY`. Their people type what the hint tells
+them, month first, and the form reads the date the tenant's way — a different bug, with no
+ticket of its own. It is filed here: [parser bug](https://github.com/kamil-zbroniec/md13/issues/1),
+[hint bug](https://github.com/kamil-zbroniec/md13/issues/2).
+
+<Callout>
+The intake tag is not the cause. It is guessed from the reporter's browser at intake. The
+cause depends on the tenant's locale and booking form, so it is decided by tenant, not by tag.
+</Callout>
+
+## Counting
+
+The export's pages overlap, so one id can come twice. Numbers on this page count unique
+reports: one id, one report.
+
+## Footnote
+
+Five reports the desk read as a one-day move (id list in `desk-notes.json`) are counted
+where they were filed, under `parser` by tenant.
